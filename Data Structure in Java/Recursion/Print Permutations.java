@@ -2,7 +2,7 @@ public class Solution {
     
     private static void FindPermutations(String str,String output) {
         if (str.length() == 0) {
-            System.out.println(output + " ");
+            System.out.println(output);
             return;
         }
         for (int i = 0; i < str.length(); i++) {
