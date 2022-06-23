@@ -6,7 +6,7 @@ public class Solution {
         
         //Taking XOP
         for(int i=0;i<arr.length;i++) {
-            unique= unique ^ unique[i];
+            unique= unique ^ arr[i];
         }
         return unique;
 	}
