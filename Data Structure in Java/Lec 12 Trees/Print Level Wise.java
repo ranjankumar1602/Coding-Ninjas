@@ -1,27 +1,46 @@
-public static void printLevelWise(TreeNode<Integer> root){
-		  if(root==null){
-    return;
-}
-        QueueUsingLL<TreeNode<Integer>> q = new QueueUsingLL<TreeNode<Integer>>();
-        TreeNode<Integer> nullNode = new TreeNode<Integer>(Integer.MIN_VALUE);
-        q.enqueue(root);
-        q.enqueue(nullNode);
+public class Solution {
+
+/*	TreeNode structure 
+ * 
+ * class TreeNode<T> {
+		T data;
+		ArrayList<TreeNode<T>> children;
+
+		TreeNode(T data){
+			this.data = data;
+			children = new ArrayList<TreeNode<T>>();
+		}
+	}*/
+	
+	
+	
+	public static void printLevelWise(TreeNode<Integer> root){
+		if(root==null){
+    		return;
+		}
+        QueueUsingLL<TreeNode<Integer>> queue = new QueueUsingLL<TreeNode<Integer>>();
+        TreeNode<Integer> newNode = new TreeNode<Integer>(Integer.MIN_VALUE);
+        queue.enqueue(root);
+        queue.enqueue(newNode);
         System.out.println(root.data);
-        while(q.size()!=1){
+        while(queue.size()!=1){
             TreeNode<Integer> temp = null;
             try{
-                temp = q.dequeue();
+                temp = queue.dequeue();
                 
             } catch (QueueEmptyException e){
                 
             }
-            if(temp==nullNode){
-                q.enqueue(nullNode);
+            if(temp==newNode){
+                queue.enqueue(newNode);
                 System.out.println();
                 continue;
             }
             for(int i = 0; i<temp.children.size();++i){
                 System.out.print(temp.children.get(i).data+" ");
-                q.enqueue(temp.children.get(i));
+                queue.enqueue(temp.children.get(i));
             }
         }
+	}
+		
+}  
