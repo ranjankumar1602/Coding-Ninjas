@@ -18,7 +18,7 @@ public class Solution {
         int leftDiameter=leftPair.diameter;
         int rightDiameter=rightPair.diameter;
         
-        int diatance=leftPair.height +rightPair.height +1;
+        int distance=leftPair.height +rightPair.height +1;
         int diameter=Math.max(leftDiameter,Math.max(rightDiameter,distance));
         int height=Math.max(leftPair.height,rightPair.height)+1;
         
